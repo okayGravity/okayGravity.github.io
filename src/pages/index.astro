@@ -1,9 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import TopoWater from '../components/TopoWater.astro';
 import { profile } from '../data/profile';
 ---
 
 <BaseLayout>
+  <TopoWater />
   <section class="hero">
     <p class="prompt">whoami</p>
     <h1>{profile.name}</h1>

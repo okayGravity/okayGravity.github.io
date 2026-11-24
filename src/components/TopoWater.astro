@@ -1,0 +1,22 @@
+<canvas class="topo-water" aria-hidden="true"></canvas>
+
+<style>
+  .topo-water {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.35;
+    /* Dim the lines behind the main text column so content stays readable. */
+    mask-image: radial-gradient(ellipse 45% 55% at 50% 40%, rgb(0 0 0 / 0.3), #000 85%);
+  }
+</style>
+
+<script>
+  import { startTopoWater } from '../scripts/topo/main';
+
+  const canvas = document.querySelector<HTMLCanvasElement>('canvas.topo-water');
+  if (canvas) startTopoWater(canvas);
+</script>
