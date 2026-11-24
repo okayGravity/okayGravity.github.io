@@ -5,14 +5,21 @@
 :root {
   color-scheme: light dark;
 
-  /* Light: icy blues. Dark: cyber red. All text pairs meet WCAG AA (>= 4.5:1). */
-  --bg: light-dark(#f2f8fd, #0d0a0c);
-  --bg-elevated: light-dark(#ffffff, #1a1114);
-  --fg: light-dark(#0f2436, #f2e6e8);
-  --fg-muted: light-dark(#4a6278, #a8939a);
-  --border: light-dark(#c5dbee, #3a1f26);
-  --accent: light-dark(#0b5fa5, #ff3b4f);
-  --accent-2: light-dark(#2b6c95, #ff8fa0);
+  /* Palette */
+  --crimson: #A20F1B;
+  --red: #D72638;
+  --white: #F5F2EE;
+  --black: #111111;
+  --vibrant-green: #1DB954;
+
+  /* Roles. Contrast vs bg: accent >= 7:1; accent-2 is ~4:1, so only for large/bold text or decoration. */
+  --bg: light-dark(var(--white), var(--black));
+  --bg-elevated: light-dark(#fffdfa, #1a1a1a);
+  --fg: light-dark(var(--black), var(--white));
+  --fg-muted: light-dark(#5c5652, #a39d97);
+  --border: light-dark(#ddd5cc, #2c2c2c);
+  --accent: light-dark(var(--crimson), var(--vibrant-green));
+  --accent-2: var(--red);
 
   --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --font-mono: ui-monospace, "JetBrains Mono", "Fira Code", Menlo, Consolas, monospace;
