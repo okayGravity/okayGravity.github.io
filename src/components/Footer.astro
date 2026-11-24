@@ -1,0 +1,40 @@
+---
+import { profile } from '../data/profile';
+
+const year = new Date().getFullYear();
+const { github, linkedin, email } = profile.links;
+---
+
+<footer class="site-footer">
+  <div class="inner">
+    <ul>
+      <li><a href={github} rel="me">github</a></li>
+      {linkedin && <li><a href={linkedin} rel="me">linkedin</a></li>}
+      {email && <li><a href={`mailto:${email}`}>email</a></li>}
+    </ul>
+    <p class="muted">© {year} {profile.name}</p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid var(--border);
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+  }
+  .inner {
+    max-width: var(--content-width);
+    margin-inline: auto;
+    padding: var(--space-4) var(--space-3);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: var(--space-3);
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: var(--space-3);
+  }
+</style>

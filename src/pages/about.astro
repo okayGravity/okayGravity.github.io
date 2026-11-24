@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { profile } from '../data/profile';
+import { interests } from '../data/resume';
+---
+
+<BaseLayout title="About">
+  <p class="prompt">whoami</p>
+  <h1>About</h1>
+
+  {profile.longBio.map((paragraph) => <p>{paragraph}</p>)}
+
+  <h2>Interests</h2>
+  <ul>
+    {interests.map((item) => <li>{item}</li>)}
+  </ul>
+</BaseLayout>

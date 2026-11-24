@@ -1,23 +1,32 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
 import { profile } from '../data/profile';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="description" content={profile.shortBio} />
-		<title>{profile.name}</title>
-	</head>
-	<body>
-		<main>
-			<p><code>$ whoami</code></p>
-			<h1>{profile.name}</h1>
-			<p>{profile.tagline}</p>
-			<p>{profile.shortBio}</p>
-			<a href={profile.links.github}>GitHub</a>
-		</main>
-	</body>
-</html>
+<BaseLayout>
+  <section class="hero">
+    <p class="prompt">whoami</p>
+    <h1>{profile.name}</h1>
+    <p class="tagline">{profile.tagline}</p>
+    <p>{profile.shortBio}</p>
+    <div class="actions">
+      <a class="button" href="/projects/">view projects</a>
+      <a class="button" href="/resume/">read resume</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero { padding-block: var(--space-5); }
+  .tagline {
+    font-family: var(--font-mono);
+    color: var(--accent-2);
+    margin-block: var(--space-2) var(--space-4);
+  }
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    margin-top: var(--space-4);
+  }
+</style>

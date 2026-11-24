@@ -1,0 +1,48 @@
+<button type="button" class="theme-toggle" aria-label="Toggle dark mode">
+  <span class="icon-dark" aria-hidden="true">☾</span>
+  <span class="icon-light" aria-hidden="true">☀</span>
+</button>
+
+<style>
+  .theme-toggle {
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--fg);
+    width: 2.25rem;
+    height: 2.25rem;
+    cursor: pointer;
+    line-height: 1;
+  }
+  .theme-toggle:hover { border-color: var(--accent); }
+
+  /* Show the icon for the theme you'd switch TO. */
+  .icon-light { display: none; }
+  :global([data-mode='dark']) .icon-dark { display: none; }
+  :global([data-mode='dark']) .icon-light { display: inline; }
+</style>
+
+<script>
+  const root = document.documentElement;
+  const button = document.querySelector<HTMLButtonElement>('.theme-toggle')!;
+  const media = window.matchMedia('(prefers-color-scheme: dark)');
+
+  const currentMode = () =>
+    root.dataset.theme ?? (media.matches ? 'dark' : 'light');
+
+  function sync() {
+    const mode = currentMode();
+    root.dataset.mode = mode;
+    button.setAttribute('aria-pressed', String(mode === 'dark'));
+  }
+
+  button.addEventListener('click', () => {
+    const next = currentMode() === 'dark' ? 'light' : 'dark';
+    root.dataset.theme = next;
+    localStorage.setItem('theme', next);
+    sync();
+  });
+
+  media.addEventListener('change', sync);
+  sync();
+</script>

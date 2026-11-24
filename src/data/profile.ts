@@ -6,8 +6,8 @@ export const profile = {
   links: {
     github: "https://github.com/okayGravity",
     // TODO: fill in once available
-    linkedin: "",
-    email: "",
+    linkedin: "https://www.linkedin.com/in/gabeahz/",
+    email: "gabeahz@gmail.com",
   },
   shortBio:
     "I am a computer science student with a background in cybersecurity and a strong interest in systems programming, computer architecture, and software security. I enjoy understanding how software works beneath the abstraction layer, investigating vulnerabilities, and contributing to open-source software. My long-term goal is to become a security researcher specializing in low-level systems and software vulnerability research.",
