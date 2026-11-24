@@ -96,8 +96,6 @@ export const certifications = [
   "CompTIA Security+",
   "CompTIA Network+",
   "CompTIA A+",
-  "Google Cybersecurity Professional Certificate",
-  "Harvard CS50's Introduction to Programming with Python — Certificate of Completion",
 ];
 
 export const competitions = [

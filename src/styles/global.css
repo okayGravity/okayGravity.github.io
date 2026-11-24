@@ -5,13 +5,14 @@
 :root {
   color-scheme: light dark;
 
-  --bg: light-dark(#fafaf7, #0e1116);
-  --bg-elevated: light-dark(#ffffff, #161b22);
-  --fg: light-dark(#1f2328, #d6deeb);
-  --fg-muted: light-dark(#59636e, #8b949e);
-  --border: light-dark(#d0d7de, #30363d);
-  --accent: light-dark(#1a7f37, #7ee787);
-  --accent-2: light-dark(#8250df, #d2a8ff);
+  /* Light: icy blues. Dark: cyber red. All text pairs meet WCAG AA (>= 4.5:1). */
+  --bg: light-dark(#f2f8fd, #0d0a0c);
+  --bg-elevated: light-dark(#ffffff, #1a1114);
+  --fg: light-dark(#0f2436, #f2e6e8);
+  --fg-muted: light-dark(#4a6278, #a8939a);
+  --border: light-dark(#c5dbee, #3a1f26);
+  --accent: light-dark(#0b5fa5, #ff3b4f);
+  --accent-2: light-dark(#2b6c95, #ff8fa0);
 
   --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --font-mono: ui-monospace, "JetBrains Mono", "Fira Code", Menlo, Consolas, monospace;
